@@ -1,0 +1,360 @@
+---
+import Hero from "../components/Hero";
+import { InputsExample } from "../components/InputsExample";
+import { ArrayInputsExample } from "../components/ArrayInputsExample";
+import { HandleShapesExample } from "../components/HandleShapesExample";
+import logo from "../ngraph-logo-dark.png";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>ngraph - Node graph editor for the web</title>
+  </head>
+  <body class="bg-neutral-900">
+    <div class="relative isolate overflow-hidden bg-neutral-900">
+      <div
+        class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
+        aria-hidden="true"
+      >
+        <div
+          class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#fca5a5] to-[#b91c1c] opacity-20"
+          style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)"
+        >
+        </div>
+      </div>
+      <div
+        class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40"
+      >
+        <div
+          class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8"
+        >
+          <img class="h-16" src={logo.src} />
+          <div class="mt-24 sm:mt-32 lg:mt-16">
+            <div class="inline-flex space-x-6">
+              <a href="https://github.com/clarkmcc/ngraph">
+                <span
+                  class="rounded-full bg-red-500/10 px-3 py-1 text-sm font-semibold leading-6 text-red-400 ring-1 ring-inset ring-red-500/20"
+                >
+                  Open Source
+                </span>
+              </a>
+              <a
+                href="https://clarkmcc.github.io/ngraph/?path=/docs/node-graph-editor--docs"
+              >
+                <span
+                  class="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-neutral-300"
+                >
+                  <span>Storybook</span>
+                  <svg
+                    class="h-5 w-5 text-neutral-500"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          <h1
+            class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl"
+          >
+            The node graph editor for the web
+          </h1>
+          <p class="mt-6 text-lg leading-8 text-neutral-300">
+            ngraph is a declarative, batteries-included, Blender-style node
+            graph editor for React, built on <a
+              href="https://github.com/xyflow/xyflow"
+              class="text-blue-400 hover:underline">xyflow</a
+            >.
+          </p>
+          <div
+            class="mt-10 bg-neutral-600 text-white p-2 pl-4 rounded-lg font-mono"
+            style="background-color: rgba(10, 10, 10, 0.6)"
+          >
+            $ npm install reactflow @clarkmcc/nodegraph
+          </div>
+          <div class="mt-10 flex items-center gap-x-6">
+            <a
+              href="https://github.com/clarkmcc/ngraph"
+              class="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
+              >Get started</a
+            >
+            <!--<a href="#" class="text-sm font-semibold leading-6 text-white"-->
+            <!--  >Learn more <span aria-hidden="true">→</span></a-->
+            <!--&gt;-->
+          </div>
+          <!--<div
+            class="mt-10 flex items-center gap-x-6"
+          >
+            -->
+          <!--  <a-->
+          <!--    href="#"-->
+          <!--    class="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"-->
+          <!--    >Get started</a-->
+          <!--  >-->
+          <!--  <a href="#" class="text-sm font-semibold leading-6 text-white"-->
+          <!--    >Learn more <span aria-hidden="true">→</span></a-->
+          <!--  >-->
+          <!--</div>-->
+        </div>
+        <div
+          class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32"
+        >
+          <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+            <!--<img src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png" alt="App screenshot" width="2432" height="1442" class="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10">-->
+            <div
+              style="width: 2432px; height:720px; overflow: hidden"
+              class="rounded-3xl drop-shadow-2xl"
+            >
+              <Hero client:load zoom="1.25" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Feature #1-->
+    <div class="bg-neutral-900 py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:text-center">
+          <h2 class="text-base font-semibold leading-7 text-red-400">
+            Develop faster
+          </h2>
+          <p
+            class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+          >
+            Easily add a node graph to your app
+          </p>
+          <p class="mt-6 text-lg leading-8 text-gray-300">
+            The best node graph engines are only available as part of advanced
+            (and often closed-source) 3D modeling software like Unreal Engine,
+            or Blender. ngraph brings a comparable feature set to the web.
+          </p>
+        </div>
+        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+          <dl
+            class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
+          >
+            <div class="flex flex-col">
+              <dt
+                class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white"
+              >
+                <i class="fa-solid fa-code text-red-400"></i>
+                Declarative by default
+              </dt>
+              <dd
+                class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300"
+              >
+                <p class="flex-auto">
+                  Using just a few lines of JSON configuration, you can easily
+                  and rapidly define custom types, colors, and nodes.
+                </p>
+                <!--<p class="mt-6">-->
+                <!--  <a-->
+                <!--    href="#"-->
+                <!--    class="text-sm font-semibold leading-6 text-red-400"-->
+                <!--    >Learn more <span aria-hidden="true">→</span></a-->
+                <!--  >-->
+                <!--</p>-->
+              </dd>
+            </div>
+            <div class="flex flex-col">
+              <dt
+                class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white"
+              >
+                <i class="fa-solid fa-battery-full text-red-400"></i>
+                Batteries included
+              </dt>
+              <dd
+                class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300"
+              >
+                <p class="flex-auto">
+                  This library tries to provide the most common features you
+                  need including copy/paste and builtin automatic layout
+                  engines.
+                </p>
+                <!--<p class="mt-6">-->
+                <!--  <a-->
+                <!--    href="#"-->
+                <!--    class="text-sm font-semibold leading-6 text-red-400"-->
+                <!--    >Learn more <span aria-hidden="true">→</span></a-->
+                <!--  >-->
+                <!--</p>-->
+              </dd>
+            </div>
+            <div class="flex flex-col">
+              <dt
+                class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white"
+              >
+                <i class="fa-solid fa-plug text-red-400"></i>
+                Extensible
+              </dt>
+              <dd
+                class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300"
+              >
+                <p class="flex-auto">
+                  All of the xyflow properties are available for you to
+                  customize to your heart's content.
+                </p>
+                <!--<p class="mt-6">-->
+                <!--  <a-->
+                <!--    href="#"-->
+                <!--    class="text-sm font-semibold leading-6 text-red-400"-->
+                <!--    >Learn more <span aria-hidden="true">→</span></a-->
+                <!--  >-->
+                <!--</p>-->
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <!--Feature #2-->
+    <div class="overflow-hidden bg-neutral-900 py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div
+          class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+        >
+          <div class="lg:ml-auto lg:pl-4 lg:pt-4">
+            <div class="lg:max-w-lg">
+              <h2 class="text-base font-semibold leading-7 text-red-400">
+                Features
+              </h2>
+              <p
+                class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+              >
+                Out-of-the-box inputs
+              </p>
+              <p class="mt-6 text-lg leading-8 text-gray-300">
+                Rapidly build your own nodes with a variety of built-in inputs
+                including text/number inputs, dropdowns, checkboxes, button
+                groups.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start justify-end lg:order-first">
+            <div
+              style="width: 600px; height:300px; overflow: hidden"
+              class="rounded-3xl drop-shadow-2xl"
+            >
+              <InputsExample client:load />
+              <div
+                class="pointer-events-none absolute left-12 top-1/2 -translate-y-1/2 transform-gpu blur-3xl lg:bottom-[-12rem] lg:top-auto lg:translate-y-0 lg:transform-gpu"
+                aria-hidden="true"
+              >
+                <div
+                  class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#fca5a5] to-[#b91c1c] opacity-10"
+                  style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Feature #3-->
+    <div class="overflow-hidden bg-neutral-900 py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div
+          class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+        >
+          <div class="lg:pr-8 lg:pt-4">
+            <div class="lg:max-w-lg">
+              <h2 class="text-base font-semibold leading-7 text-red-400">
+                Features
+              </h2>
+              <p
+                class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+              >
+                Array inputs
+              </p>
+              <p class="mt-6 text-lg leading-8 text-gray-300">
+                Easily convert any input into an array input. Array inputs
+                accept any number of connections as long as the types match.
+              </p>
+            </div>
+          </div>
+          <div
+            style="width: 600px; height:300px; overflow: hidden"
+            class="rounded-3xl drop-shadow-2xl"
+          >
+            <ArrayInputsExample client:load />
+            <div
+              class="pointer-events-none absolute left-12 top-1/2 -translate-y-1/2 transform-gpu blur-3xl lg:bottom-[-12rem] lg:top-auto lg:translate-y-0 lg:transform-gpu"
+              aria-hidden="true"
+            >
+              <div
+                class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#fca5a5] to-[#b91c1c] opacity-10"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+              >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Feature #4-->
+    <div class="overflow-hidden bg-neutral-900 py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div
+          class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+        >
+          <div class="lg:ml-auto lg:pl-4 lg:pt-4">
+            <div class="lg:max-w-lg">
+              <h2 class="text-base font-semibold leading-7 text-red-400">
+                Features
+              </h2>
+              <p
+                class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+              >
+                Multiple handle shapes
+              </p>
+              <p class="mt-6 text-lg leading-8 text-gray-300">
+                Pick from a variety of handle shapes including circle, diamond,
+                and diamond + dot.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start justify-end lg:order-first">
+            <div
+              style="width: 600px; height:300px; overflow: hidden"
+              class="rounded-3xl drop-shadow-2xl"
+            >
+              <HandleShapesExample client:load />
+              <div
+                class="pointer-events-none absolute left-12 top-1/2 -translate-y-1/2 transform-gpu blur-3xl lg:bottom-[-12rem] lg:top-auto lg:translate-y-0 lg:transform-gpu"
+                aria-hidden="true"
+              >
+                <div
+                  class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#fca5a5] to-[#b91c1c] opacity-10"
+                  style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
