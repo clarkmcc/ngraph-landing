@@ -5,6 +5,7 @@ import { ArrayInputsExample } from "../components/ArrayInputsExample";
 import { HandleShapesExample } from "../components/HandleShapesExample";
 import { InputGroupsExample } from "../components/InputGroupsExample";
 import logo from "../ngraph-logo-dark.png";
+import "@xyflow/react/dist/style.css";
 ---
 
 <html lang="en">
@@ -255,7 +256,7 @@ import logo from "../ngraph-logo-dark.png";
               style="width: 600px; height:300px; overflow: hidden"
               class="rounded-3xl drop-shadow-2xl"
             >
-              <InputsExample client:visible />
+              <InputsExample client:load />
               <div
                 class="pointer-events-none absolute left-12 top-1/2 -translate-y-1/2 transform-gpu blur-3xl lg:bottom-[-12rem] lg:top-auto lg:translate-y-0 lg:transform-gpu"
                 aria-hidden="true"
@@ -298,7 +299,7 @@ import logo from "../ngraph-logo-dark.png";
             style="width: 600px; height:300px; overflow: hidden"
             class="rounded-3xl drop-shadow-2xl"
           >
-            <ArrayInputsExample client:visible />
+            <ArrayInputsExample client:load />
             <div
               class="pointer-events-none absolute left-12 top-1/2 -translate-y-1/2 transform-gpu blur-3xl lg:bottom-[-12rem] lg:top-auto lg:translate-y-0 lg:transform-gpu"
               aria-hidden="true"
@@ -341,7 +342,7 @@ import logo from "../ngraph-logo-dark.png";
               style="width: 600px; height:300px; overflow: hidden"
               class="rounded-3xl drop-shadow-2xl"
             >
-              <HandleShapesExample client:visible />
+              <HandleShapesExample client:load />
               <div
                 class="pointer-events-none absolute left-12 top-1/2 -translate-y-1/2 transform-gpu blur-3xl lg:bottom-[-12rem] lg:top-auto lg:translate-y-0 lg:transform-gpu"
                 aria-hidden="true"
@@ -385,7 +386,7 @@ import logo from "../ngraph-logo-dark.png";
             style="width: 600px; height:400px; overflow: hidden"
             class="rounded-3xl drop-shadow-2xl"
           >
-            <InputGroupsExample client:visible />
+            <InputGroupsExample client:load />
             <div
               class="pointer-events-none absolute left-12 top-1/2 -translate-y-1/2 transform-gpu blur-3xl lg:bottom-[-12rem] lg:top-auto lg:translate-y-0 lg:transform-gpu"
               aria-hidden="true"

@@ -1,5 +1,9 @@
 import React from "react";
-import { Background, BackgroundVariant, ReactFlowProvider } from "reactflow";
+import {
+  Background,
+  BackgroundVariant,
+  ReactFlowProvider,
+} from "@xyflow/react";
 import { GraphConfigProvider, NodeGraphEditor } from "@clarkmcc/ngraph";
 import "./BaseNodeGraphExample.css";
 
